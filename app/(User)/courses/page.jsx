@@ -11,37 +11,43 @@ const links = [
     link:`src="https://dragline-center.h5p.com/content/1292138406209022767/embed" aria-label="अध्ययन सामग्री" width="1088" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"`,
     src:'https://dragline-center.h5p.com/content/1292137498347389477/embed',
     title:'अध्ययन सामग्री',
-    id:'1292137498347389477'
+    id:'1292137498347389477',
+    duration:39000,
   },
   {
     link:`src="https://dragline-center.h5p.com/content/1292138406209022767/embed" aria-label="अध्ययन सामग्री" width="1088" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"`,
     src:'https://dragline-center.h5p.com/content/1292138406209022767/embed',
     title:'अध्ययन सामग्री',
-    id:'1292138406209022767'
+    id:'1292138406209022767',
+    duration:39000,
   },
   {
     link:`src="https://dragline-center.h5p.com/content/1292138406209022767/embed" aria-label="अध्ययन सामग्री" width="1088" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"`,
     src:'https://dragline-center.h5p.com/content/1292137498347389477/embed',
     title:'अध्ययन सामग्री',
-    id:'1292138406209022767'
+    id:'1292138406209022767',
+    duration:39000,
   },
   {
     link:`src="https://dragline-center.h5p.com/content/1292138406209022767/embed" aria-label="अध्ययन सामग्री" width="1088" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"`,
     src:'https://dragline-center.h5p.com/content/1292138406209022767/embed',
     title:'अध्ययन सामग्री',
-    id:'1292138406209022767'
+    id:'1292138406209022767',
+    duration:39000,
   },
   {
     link:`src="https://dragline-center.h5p.com/content/1292142026794442427/embed" aria-label="अध्ययन सामग्री" width="1088" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"`,
     src:'https://dragline-center.h5p.com/content/1292142026794442427/embed',
     title:'अध्ययन सामग्री प्रशन 1',
-    id:'1292142026794442427'
+    id:'1292142026794442427',
+    duration:39000,
   },
   {
     link:`src="https://dragline-center.h5p.com/content/1292142044467212597/embed" aria-label="अध्ययन सामग्री" width="1088" height="637" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"`,
     src:'https://dragline-center.h5p.com/content/1292142044467212597/embed',
     title:'view',
-    id:'1292142044467212597'
+    id:'1292142044467212597',
+    duration:39000,
   },
   
 ]

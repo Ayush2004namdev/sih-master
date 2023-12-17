@@ -2,14 +2,14 @@ import Link from 'next/link'
 import React from 'react'
 
 const CourseCard = (props) => {
-    const {title,src,id} = props
+    const {title,src,id,duration} = props
     const handleSomeClick = (id) => {
-        window.location.href=`/course/${id}`
+        window.location.href=`/course/${id}?duration=${duration}`
     }
 
 
   return (<>
-    <Link href={`/course/${id}`}>
+    <Link href={`/course/${id}?duration=${duration}`}>
     <div className='w-full relative cursor-pointer items-center flex flex-col justify-between bg-white py-4 my-2 mx-1 rounded-xl'>
     
      <div className="absolute inset-0"></div>
