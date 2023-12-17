@@ -7,9 +7,8 @@ const CourseCard = (props) => {
         window.location.href=`/course/${id}?duration=${duration}`
     }
 
-
   return (<>
-    <Link href={`/course/${id}?duration=${duration}`}>
+    <Link href={`/course/${id}?duration=${duration}&title=${title}`}>
     <div className='w-full relative cursor-pointer items-center flex flex-col justify-between bg-white py-4 my-2 mx-1 rounded-xl'>
     
      <div className="absolute inset-0"></div>

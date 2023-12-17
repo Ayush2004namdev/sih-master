@@ -3,7 +3,8 @@ const { default: mongoose, models } = require("mongoose");
 const userSchema = new mongoose.Schema({
     userName:{
         type:String,
-        required:true
+        required:true,
+        unique:true
     },
     email:{
         type:String,
@@ -12,6 +13,9 @@ const userSchema = new mongoose.Schema({
     mobileNo:{
         type:String,
         required:true,
+    },
+    certificates:{
+        type:Array
     },
     password:{
         type:String,

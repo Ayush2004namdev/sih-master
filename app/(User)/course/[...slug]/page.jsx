@@ -6,13 +6,14 @@ import Script from 'next/script'
 import React, { useEffect, useState } from 'react'
 
 const page = (req) => {
-  const {duration} = req.searchParams
+  const {duration,title} = req.searchParams
 
 
   const [isCertified,setIsCertified] = useState(false)
   const [name,setName] = useState(null)
   const [show,setShow] = useState(false)
-
+  const id = req.params.slug
+  
   useEffect(() => {
     const something = Cookies.get('token')
   
@@ -51,20 +52,19 @@ const page = (req) => {
       const blob = new Blob([byteArray], { type: 'application/pdf' });
 
       const pdfObjectUrl = URL.createObjectURL(blob);
-      
-      window.open(pdfObjectUrl, '_blank');
+      await axios.post('/api/storeToDb',{userName:name,title})
       setShow(false)
+      window.open(pdfObjectUrl, '_blank');
     }
       catch(err){
         console.error('error while creating pdf' , err)
       }
  }
 
-    const id = req.params.slug
     const src=`https://dragline-center.h5p.com/content/${id}/embed`
   return (
     <>
-    {isCertified && show && (
+    {show && (
     <div  className="inset-0 bg-black fixed flex items-center justify-center top-0 bg-opacity-90">
       <div className="bg-white px-12 py-3 rounded-lg max-w-3xl text-center">
         <h1 className='text-2xl'>Get Certified for Your Progress</h1>
