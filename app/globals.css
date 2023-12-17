@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.loginBtn{
+  @apply border cursor-pointer rounded-lg h-14 w-14 fill-slate-400 px-1 py-1
+}
+
+.imm{
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/TKI_Dragline.JPG/1280px-TKI_Dragline.JPG');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
