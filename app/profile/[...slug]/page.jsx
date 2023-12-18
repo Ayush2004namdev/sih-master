@@ -60,7 +60,7 @@ const page = (req) => {
     <>
     <div className="h-40 w-full flex items-center bg-red-500 ">
       <div onClick={(e) => window.location.href='/'} className="text-white">
-      <ArrowLeftOnRectangleIcon className='h-12 w-12 text-white cursor-pointer' onClick={handleLogout}/>
+      <ArrowLeftOnRectangleIcon className='h-12 w-12 text-white cursor-pointer'/>
          Back</div>
       <div className="flex gap-4 items-center grow">
       <div className="rounded-full overflow-hidden ml-12 h-36 w-36 bg-gray-400">

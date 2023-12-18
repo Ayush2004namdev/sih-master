@@ -6,8 +6,7 @@ import Link from 'next/link'
 const navigation = [
     { name: 'Home', href: '#' },
     { name: 'Courses', href: '/courses' },
-    { name: 'Marketplace', href: '#' },
-    { name: 'Company', href: '#' },
+    { name: 'pofile', href: '/profile/m' },
   ]
     const Navbar = (props) => {
     const {userName} = props
@@ -70,7 +69,7 @@ const navigation = [
               </a>
               <button
                 type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                className="-m-2.5 rounded-md p-2.5 text-white"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <span className="sr-only">Close menu</span>
@@ -91,12 +90,18 @@ const navigation = [
                   ))}
                 </div>
                 <div className="py-6">
-                  <Link
+                  {userName ? (<Link
+                    href="/profile/m"
+                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >
+                    {userName}
+                  </Link>) : (<Link
                     href="/login"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                     >
-                    Log in
-                  </Link>
+                    login
+                  </Link>)}
+                  
                 </div>
               </div>
             </div>

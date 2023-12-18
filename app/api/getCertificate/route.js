@@ -8,8 +8,8 @@ const fs = require('fs');
 export async function POST(req) {
   try {
     const data = await req.json()
-    let {userId} = data
-
+    let {userId,title} = data
+    
 
 
     const templateBytes = path.join(process.cwd(), 'public', 'certifTemp.pdf');
@@ -20,7 +20,7 @@ export async function POST(req) {
     const pages = pdfDoc.getPage(0);
 
     
-    pages.drawText(` ${userId}`, { x: 350, y: 320, color: rgb(0, 0, 0) });
+    pages.drawText(`  ${userId}`, { x: 300, y: 315, color: rgb(0, 0, 0) });
     
     const uri = await pdfDoc.saveAsBase64({dataUri:true})
 

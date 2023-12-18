@@ -8,10 +8,10 @@ const ShowCertificates = ({data,name}) => {
   const handleCertificateClick = async() => {
     try{
       setIsLoadingCertificate(true)
-      const response = await axios.post('/api/getCertificate',{userId:name})
+      const response = await axios.post('/api/getCertificate',{userId:name,title:data})
       console.log(response)
       const base64Url = response.data.uri;
-  
+        console.log(base64Url)
         const byteCharacters = atob(base64Url.split(',')[1]);
         const byteNumbers = new Array(byteCharacters.length);
         for (let i = 0; i < byteCharacters.length; i++) {
