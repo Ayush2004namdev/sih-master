@@ -12,6 +12,7 @@ const page = (req) => {
   const [isCertified,setIsCertified] = useState(false)
   const [name,setName] = useState(null)
   const [show,setShow] = useState(false)
+  const [loading,setLoading] = useState(false)
   const id = req.params.slug
   
   useEffect(() => {
@@ -37,11 +38,13 @@ const page = (req) => {
     },duration)
   }
 
-  const  handleGetCertificateClick= async() => {
+  const  handleGetCertificateClick= async(e) => {
+    e.stopPropagation();
+    setLoading(true)
     try{
     const response = await axios.post('/api/getCertificate',{userId:name})
     console.log(response)
-    const base64Url = response.data;
+    const base64Url = response.data.uri;
 
       const byteCharacters = atob(base64Url.split(',')[1]);
       const byteNumbers = new Array(byteCharacters.length);
@@ -54,6 +57,7 @@ const page = (req) => {
       const pdfObjectUrl = URL.createObjectURL(blob);
       await axios.post('/api/storeToDb',{userName:name,title})
       setShow(false)
+      setLoading(false)
       window.open(pdfObjectUrl, '_blank');
     }
       catch(err){
@@ -65,15 +69,15 @@ const page = (req) => {
   return (
     <>
     {show && (
-    <div  className="inset-0 bg-black fixed flex items-center justify-center top-0 bg-opacity-90">
-      <div className="bg-white px-12 py-3 rounded-lg max-w-3xl text-center">
+    <div onClick={() => setShow(false)} className="inset-0 bg-black fixed flex items-center justify-center top-0 bg-opacity-90">
+      <div onClick={(e) => e.stopPropagation()} className="bg-white px-12 py-3 rounded-lg max-w-3xl text-center">
         <h1 className='text-2xl'>Get Certified for Your Progress</h1>
-        <button onClick={handleGetCertificateClick} className='bg-gradient-to-r rounded-md to-blue-400 from-cyan-500 px-4 py-1 mt-8'>Get Certificate</button>
+        <button onClick={handleGetCertificateClick} className='bg-gradient-to-r rounded-md to-blue-400 from-cyan-500 px-4 py-1 mt-8'>{loading ? 'Loading...' : 'Get Certificate'}</button>
       </div>
     </div>
     )}
     <Navbar/>
-    <div className="flex w-full bg-black bg-opacity-90 justify-center">
+    <div className="flex h-screen w-full bg-black bg-opacity-90 justify-center">
     <div className="w-[39%] object-contain">
     <iframe src={src} aria-label="मूल्यांकन" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe><Script src="https://dragline-center.h5p.com/js/h5p-resizer.js" charset="UTF-8"></Script>
     </div>

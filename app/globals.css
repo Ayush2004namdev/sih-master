@@ -13,3 +13,10 @@
   background-position: center;
 
 }
+
+.mnm{
+  background-image: url('https://www.videotile.co.uk/wp-content/uploads/2018/10/Interactive-Video-01.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}

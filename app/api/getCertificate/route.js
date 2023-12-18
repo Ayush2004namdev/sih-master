@@ -24,9 +24,9 @@ export async function POST(req) {
     
     const uri = await pdfDoc.saveAsBase64({dataUri:true})
 
-    return NextResponse.json(uri)
+    return NextResponse.json({uri})
   } catch (error) {
     console.error('Error generating certificate:', error);
-   return new NextResponse('Error While Creating The Certificate')
+   return NextResponse.json({mssg : 'Error While Creating The Certificate'})
   }
 }

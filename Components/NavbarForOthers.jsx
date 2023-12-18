@@ -3,6 +3,11 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import Cookies from 'js-cookie';
+import LogoutButton from './LogoutButton';
+
+import React from 'react'
+
+
 
 
 const navigation = [
@@ -14,6 +19,8 @@ const navigation = [
     const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [name,setName] =useState('')
+    const [loggedOut,setLoggedOut] = useState(false);
+
     useEffect(() => {
         try{
           const something = Cookies.get('token')
@@ -22,14 +29,19 @@ const navigation = [
             const decodedPayload = atob(parts[1]);
         const payloadObject = JSON.parse(decodedPayload);
         
-        const username = payloadObject.userName;
+        const username = payloadObject.email;
     
         setName(username)
           }
         }catch(e){
           console.log(e)
         }
-      })
+      },[loggedOut])
+
+    const handleLogout = () => {
+         document.cookie = `token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
+         window.location.href='/'
+     }
 
   return (
     <header className="inset-x-0 top-0 z-50 bg-blue-400">
@@ -61,15 +73,24 @@ const navigation = [
               </a>
             ))}
           </div>
-          <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+          <div className="hidden lg:flex lg:flex-1 lg:justify-end items-center gap-4">
             {name ? (
-              <div className="text-sm cursor-pointer font-semibold leading-6 text-white">
-              {name} <span aria-hidden="true">&rarr;</span>
+                <div>
+                <Link href={`/profile/${name}`}>
+                <div className="w-12 h-12 bg-gray-400 overflow-hidden cursor-pointer rounded-full">
+                  <img src="https://cdn.vectorstock.com/i/preview-1x/17/61/male-avatar-profile-picture-vector-10211761.jpg" alt="" />
+                </div>
+                </Link>
+              {/* <div className="text-sm cursor-pointer font-semibold leading-6 text-white">
+              {name} <span aria-hidden="true"></span>
+              </div> */}
             </div>
             ) : (<Link href="/login" className="text-sm font-semibold leading-6 text-white">
-            {'Login'} <span aria-hidden="true">&rarr;</span>
+            {'Login'} <span aria-hidden="true"></span>
           </Link>)}
-            
+          <button onClick={handleLogout}>
+            <LogoutButton />
+          </button>
           </div>
         </nav>
         <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>

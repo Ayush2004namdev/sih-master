@@ -12,11 +12,11 @@ export async function POST(req){
         return NextResponse.json({msg:'No User Found'});
     }
     if(existinguser.certificates.find((e) => e === title)){
-        return new NextResponse.json({msg:'Already Done'})
+        return NextResponse.json({msg:'Already Done'})
     }
 
     const newUser = await user.findOneAndUpdate((existinguser._id) , { $push:{certificates : title}})
 
     return NextResponse.json({newUser})
-
 }
+
