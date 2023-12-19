@@ -35,7 +35,7 @@ export default function Example() {
           </div>
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-200 sm:text-6xl">
-            Digging In
+            DRAGLINE कार्यवाहक
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-100">
             Dive into the world of dragline expertise with our courses, where precision meets power. Elevate your skills, navigate complexities, and shape a successful career in heavy machinery. Unearth your potential with us today!

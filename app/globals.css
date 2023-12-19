@@ -20,3 +20,13 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+.mnmn:hover{
+  -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.287);
+    -moz-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.287);
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.287);
+}
+
+.mnmn{
+  border: 1px solid rgba(0, 0, 0, 0.189);
+}

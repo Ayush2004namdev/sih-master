@@ -3,7 +3,8 @@ import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import Cookies from 'js-cookie';
-import LogoutButton from './LogoutButton';
+import { ArrowRightOnRectangleIcon } from '@heroicons/react/24/outline';
+
 
 import React from 'react'
 
@@ -13,8 +14,8 @@ import React from 'react'
 const navigation = [
     { name: 'Home', href: '/' },
     { name: 'Courses', href: '/courses' },
-    { name: 'Marketplace', href: '#' },
-    { name: 'Company', href: '#' },
+    { name: 'Profile', href: '/profile/m' },
+    { name: 'About', href: '/about' },
   ]
     const Navbar = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -44,14 +45,14 @@ const navigation = [
      }
 
   return (
-    <header className="inset-x-0 top-0 z-50 bg-blue-400">
+    <header className="inset-x-0 top-0 z-50 bg-[#1B3555]">
         <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
-                className="h-8 w-auto"
-                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                className="h-14 w-auto"
+                src={'/images/webLogo.png'}
                 alt=""
                 />
             </a>
@@ -81,15 +82,12 @@ const navigation = [
                   <img src="https://cdn.vectorstock.com/i/preview-1x/17/61/male-avatar-profile-picture-vector-10211761.jpg" alt="" />
                 </div>
                 </Link>
-              {/* <div className="text-sm cursor-pointer font-semibold leading-6 text-white">
-              {name} <span aria-hidden="true"></span>
-              </div> */}
             </div>
             ) : (<Link href="/login" className="text-sm font-semibold leading-6 text-white">
             {'Login'} <span aria-hidden="true"></span>
           </Link>)}
           <button onClick={handleLogout}>
-            <LogoutButton />
+            <ArrowRightOnRectangleIcon className='h-10 w-10 text-white' />
           </button>
           </div>
         </nav>

@@ -20,7 +20,8 @@ export async function POST(req) {
     const pages = pdfDoc.getPage(0);
 
     
-    pages.drawText(`  ${userId}`, { x: 300, y: 315, color: rgb(0, 0, 0) });
+    pages.drawText(`  ${userId}`, { x: 310, y: 335, color: rgb(0, 0, 0) });
+    pages.drawText(` for completion of ${title}`,{x:235 , y:295 , color: rgb(0, 0, 0)} )
     
     const uri = await pdfDoc.saveAsBase64({dataUri:true})
 

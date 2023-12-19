@@ -63,7 +63,7 @@ const page = (req) => {
       <ArrowLeftOnRectangleIcon className='h-12 w-12 text-white cursor-pointer'/>
          Back</div>
       <div className="flex gap-4 items-center grow">
-      <div className="rounded-full overflow-hidden ml-12 h-36 w-36 bg-gray-400">
+      <div className="rounded-full overflow-hidden ml-2 h-36 w-36 bg-gray-400">
         <img src="https://cdn.vectorstock.com/i/preview-1x/17/61/male-avatar-profile-picture-vector-10211761.jpg" alt="" />
       </div>
         <div className='text-xl text-white'><p>

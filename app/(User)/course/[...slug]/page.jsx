@@ -42,7 +42,7 @@ const page = (req) => {
     e.stopPropagation();
     setLoading(true)
     try{
-    const response = await axios.post('/api/getCertificate',{userId:name})
+    const response = await axios.post('/api/getCertificate',{userId:name,title})
     console.log(response)
     const base64Url = response.data.uri;
 
